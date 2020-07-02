@@ -1,0 +1,41 @@
+</head>
+    <body>
+   
+  
+ <div class="container">
+     <header class="jumbotron">
+         <div class="container">
+             <h1>Welcome to Online Counsellingg!!</h1>
+             <p>Select Doctors to Enroll!</p>
+             
+         </div>
+     </header>
+     
+     <div class="row text-center" style="display:flex; flex-wrap: wrap;">
+        <% doctor.forEach(function(doc){ %>
+            <div class="col-md-3 col-sm-6" id="width" style="margin:30px" >
+                <div class="thumbnail" align="center" style="outline-style:solid;left-margin:30px">
+                  <div class="caption">
+                   
+                   <div class="container" style="margin:30px;;padding-top:30px">
+                   <img src="<%= doc.image %>"  style="border-style:solid" width="200" height="200">
+                   </div>
+                   <p>
+                       <h4>Name:<%= doc.name %></h4>
+                       <h5>Qualification:<%= doc.Qualification%></h5>
+                       <h5>Specialization:<%= doc.Specilaization%></h5>
+                   </p>
+                   <p>
+                        
+                       <a href="/viewdoctor/<%= doc._id %>" class="btn btn-primary">More Info</a>
+                      
+                   </p>
+                   </div>
+                </div>
+            </div>
+        <% }); %>
+    </div>
+</div>
+
+<% include partials/footer %>
+

@@ -1,0 +1,73 @@
+<!-- include partials/header -->
+<!DOCTYPE html>
+
+<html>
+    <head>
+<script type="text/javascript" src='https://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.3.min.js'></script>
+<script type="text/javascript" src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.0.3/js/bootstrap.min.js'></script>
+<link rel="stylesheet" href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.0.3/css/bootstrap.min.css'
+    media="screen" />
+
+<link rel="stylesheet" href="css/signIn.css">
+</head>
+<body>
+<form method="post" action="/signIn" id="form1">
+<center>
+<div style="max-width: 400px;">
+    <h1 class="form-signin-heading"><b>
+          Sign Up  </b></h1>
+        <br>
+        <label for="name" style="padding-right:360px">
+            Name</label>
+        <input name="name" style="width:450px; height:50px;"type="text" id="txtUsername" class="form-control" placeholder="Enter Username"
+            required />
+        <br />
+    <label for="username">
+        Username</label>
+    <input name="username" style="width:450px; height:50px;"type="text" id="txtUsername" class="form-control" placeholder="Enter Username"
+        required />
+    <br />
+
+  
+
+    <label for="password">
+        Password</label>
+    <input name="password" style="width:450px; height:50px;"type="password" id="txtPassword" title="Password must contain: Minimum 8 characters atleast 1 Alphabet and 1 Number"
+        class="form-control" placeholder="Enter Password" required pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$" />
+    <br />
+    <label for="txtConfirmPassword" style="padding-right:275px">
+        Confirm Password</label>
+    <input name="txtConfirmPassword" style="width:450px; height:50px;" type="password" id="txtConfirmPassword" class="form-control"
+        placeholder="Confirm Password" />
+    <br />
+    <label for="email" style="padding-right:360px">
+        Email</label>
+    <input name="email" id="txtEmail" style="width:450px; height:50px;" class="form-control" placeholder="Enter Email"
+        required type="email" /><br>
+        <label for="number" style="padding-right:360px">
+            Phone</label>
+        <input name="number" id="number" style="width:450px; height:50px;" class="form-control" placeholder="Enter Phone No."
+            required type="number" />
+    <hr />
+    <input style="width:200px; height:50px; background-color:green; font-size:20px;" type="submit" name="btnSignup" value="Sign up" id="btnSignup" class="btn btn-primary" />
+</div>
+</center>
+</form>
+<script type="text/javascript">
+    window.onload = function () {
+        var txtPassword = document.getElementById("txtPassword");
+        var txtConfirmPassword = document.getElementById("txtConfirmPassword");
+        txtPassword.onchange = ConfirmPassword;
+        txtConfirmPassword.onkeyup = ConfirmPassword;
+        function ConfirmPassword() {
+            txtConfirmPassword.setCustomValidity("");
+            if (txtPassword.value != txtConfirmPassword.value) {
+                txtConfirmPassword.setCustomValidity("Passwords do not match.");
+            }
+        }
+    }
+</script>
+
+<% include partials/footer %>
+
+

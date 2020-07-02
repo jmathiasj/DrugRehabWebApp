@@ -1,0 +1,52 @@
+<<% include partials/header %>
+
+
+
+
+ <div class="container">
+     <!--<header class="jumbotron">-->
+         <div class="container">
+             <h1 style="padding:30px";>Our Rehab Centres</h1>
+         </div>
+     <!--</header>-->
+
+     <!--Search Button-->
+     
+     <p>
+         <form action="/viewRehab" method="GET" class="form-inline">
+             <div class="form-group" style="margin-left:1050px;">
+                 <input type="text" name="search" placeholder="Enter Location" class="form-control">
+                 <input type="submit" value="search" class="btn btn-primary">
+             </div>
+         </form>
+     </p>
+     
+     
+     
+     <div class="row text-center" style="display:flex; flex-wrap: wrap;">
+         <div class="col-md-12">
+             <% if(noMatch != undefined) { %>
+                 <h3 style="margin-left:500px;"><%= noMatch %></h3>
+             <% } %>
+         </div> 
+        <% rehab.forEach(function(rehab){ %>
+            <div class="col-md-3 col-sm-6" id="width" style="margin:30px" >
+                <div class="thumbnail" align="center" style="outline-style:solid;left-margin:30px">
+                  <div class="caption">
+                   
+                   <div class="container" style="margin:30px;;padding-top:30px">
+                   <img src="<%= rehab.image %>"  style="border-style:solid" width="200" height="200">
+                   </div>
+                   <p>
+                       <h4>Name:<%= rehab.Name %></h4>
+                       <h5>Location:<%= rehab.Location%></h5>
+                       <h5>Contact:<%= rehab.Contact%></h5>
+                   </p>
+                   </div>
+                </div>
+            </div>
+        <% }); %>
+    </div>
+</div>
+
+

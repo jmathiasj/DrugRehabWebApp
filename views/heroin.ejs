@@ -1,0 +1,87 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>Drug rehab!!</title>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    </head>
+    <body>
+<script>
+    xval1=0,denominator=1;
+</script>
+<% var count=0,limit=0;%>  
+<div class="container">
+    <div class="jumbotron">
+        
+        <h3 align="Center">Welcome to the Alcohol Questions</h3>
+    </div>
+        <% que.forEach(function(qu){%>
+        <%limit = limit+1;%>
+        <%  }) %>
+
+               
+                <form action="/heroinq" method="POST">
+                  
+                  <% que.forEach(function(qu){ %>
+                  
+                  <% count=count+1;%>
+                    
+                   
+                <div class="container-sm" style="margin-bottom:30px">
+                    <div style="border-style:solid;background-color:lightblue">
+                          <h4>  <%= count%>]<%= qu.question %></h4>
+                          
+                    </div>
+                    
+                    <div style="border-style:solid" > 
+                           <input type="radio" name="<%= count%>" onclick="calResult(this.value,this.name)"  value="5"><%= qu.opt1%> <br>
+                           <input type="radio" name="<%= count%>" onclick="calResult(this.value,this.name)" value="10"><%= qu.opt2%> <br>
+                           <input type="radio" name="<%= count%>" onclick="calResult(this.value,this.name)" value="15"><%= qu.opt3%> <br>
+                           <input type="radio" name="<%= count%>" onclick="calResult(this.value,this.name)" value="20"><%= qu.opt4%> <br>
+                           <input type="radio" name="<%= count%>" onclick="calResult(this.value,this.name)" value="25"><%= qu.opt5%> <br>
+                           
+                    </div>
+                   
+                </div>
+                       
+                     <% })%> 
+                     
+                     
+                     <button  name="score" id="result">Submit</button>
+                </form>
+                
+              
+
+
+</div>
+
+<script>
+   function calResult(val,name){
+                      
+                      val1 = parseInt(val);
+                      name1 = parseInt(name);
+                     
+                      xval1 = xval1 +val1;
+                      
+                      if(name1 == <%= limit %>){
+                         
+                          denominator = <%= limit %>*25;
+                          xval1 = xval1*100;
+                          xval1 = xval1/denominator
+                        
+                          
+                      }
+                      
+                     document.getElementById("result").value = xval1;  
+    }
+      </script>   
+   <p align = "Center"><i>.........Cupcakes for all............</i></p>
+    
+    </body>
+</html>  

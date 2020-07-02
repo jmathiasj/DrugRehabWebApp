@@ -1,0 +1,144 @@
+body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif;}
+
+body, html {
+
+    height: 100%;
+
+    color: #777;
+
+    line-height: 1.8;
+
+}
+
+
+
+/* Create a Parallax Effect */
+
+.bgimg-1, .bgimg-2, .bgimg-3 {
+
+    background-attachment: fixed;
+
+    background-position: center;
+
+    background-repeat: no-repeat;
+
+    background-size: cover;
+
+}
+
+
+
+/* First image (Logo. Full height) */
+
+.bgimg-1 {
+
+    background-image: url('https://images.wallpaperscraft.com/image/jump_people_field_grass_sky_nature_54406_1920x1080.jpg');
+
+    min-height: 200px;
+
+}
+
+
+
+/* Second image (Portfolio) */
+
+.bgimg-2 {
+
+    background-image: url("http://erinmillsdental.com/wp-content/uploads/2015/01/people-group-smiling1.jpg");
+
+    min-height: 400px;
+
+}
+
+
+
+/*teamcards*/
+
+.card {
+
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+
+  max-width: 300px;
+
+  margin: auto;
+
+  text-align: center;
+
+  font-family: arial;
+
+  display: inline-block;
+
+
+
+}
+
+
+
+.title {
+
+  color: grey;
+
+  font-size: 18px;
+
+}
+
+
+
+button {
+
+  border: none;
+
+  outline: 0;
+
+  display: inline-block;
+
+  padding: 8px;
+
+  color: white;
+
+  background-color: #000;
+
+  text-align: center;
+
+  cursor: pointer;
+
+  width: 100%;
+
+  font-size: 18px;
+
+}
+
+
+
+a {
+
+  text-decoration: none;
+
+  font-size: 22px;
+
+  color: black;
+
+}
+
+
+
+/* Third image (Contact) */
+
+.bgimg-3 {
+
+    background-image: url("http://primrosehealingandwellness.com/wp-content/uploads/2017/01/bigstock-Addiction-We-Can-Help-Chalk-Il-47916995.jpg");
+
+    min-height: 400px;
+
+    
+
+}
+
+
+
+.w3-wide {letter-spacing: 10px;}
+
+.w3-hover-opacity {cursor: pointer;}
+
+
+
